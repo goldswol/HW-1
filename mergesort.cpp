@@ -31,7 +31,7 @@ int main() {
   mergeSort(arr, 0, arrsize-1);
 
   std::cout << "\n\nSorted array is:\n";
-  printArray(arr, arrsize)
+  printArray(arr, arrsize);
 
   //Here comes the part where the sort actually happens
 
@@ -77,6 +77,7 @@ void mergeArrays(int arr[], int pos1, int pos2, int pos3) {
           j++;
       }
       k++;
+    }
 }
 
 void mergeSort(int arr[],int pos1,int pos3){
