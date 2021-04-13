@@ -47,7 +47,7 @@ void insertSort(int arr[], int arrsize)
 
 void runTimeN(int n)
 {
-  srand(time(NULL))
+  srand(time(NULL));
   std::clock();
   int* arr;
   for (int i = 0; i < n; i++)
