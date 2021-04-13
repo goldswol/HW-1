@@ -50,12 +50,12 @@ void runTimeN(int n)
   clock_t clock;
   srand(time(NULL));
   int arr[500000];
-  clock = clock();
+  clock = std::clock();
   for (int i = 0; i < n; i++)
   {
     arr[i] = rand()%1000;
   }
-  clock = clock() - clock;
+  clock = std::clock() - clock;
   insertSort(arr, n);
   std::cout << "Time taken for " << n << " variables: " << (float)clocks/CLOCKS_PER_SEC;
 }
