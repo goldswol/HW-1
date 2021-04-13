@@ -2,6 +2,7 @@
 #include <fstream>
 #include <cstdlib>
 #include <time.h>
+#include <bits/stdc++.h>
 
 void printArray(int*, int);
 void insertSort(int*, int);
