@@ -1,8 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <cstdlib>
-#include <time.h>
-#include <bits/stdc++.h>
+#include <ctime>
 
 void printArray(int*, int);
 void insertSort(int*, int);
@@ -48,8 +47,7 @@ void insertSort(int arr[], int arrsize)
 
 void runTimeN(int n)
 {
-  time_t start, end;
-  time(&start);
+  std::clock();
   int* arr;
   for (int i = 0; i < n; i++)
   {
@@ -59,6 +57,4 @@ void runTimeN(int n)
   insertSort(arr, n);
 
   delete[] arr;
-  time(&end);
-  std::cout << "Runtime for" << n << "items: " << fixed << time_taken << set_precision (5) << std::endl;
 }
