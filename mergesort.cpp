@@ -11,6 +11,7 @@ int main() {
 
   std::ifstream infile;
   infile.open("data.txt");
+  std::cout << "File opened";
   //Handling file not opening as expected
   if (infile.fail()) {
       std::cerr << "failed to open file" << std::endl;
