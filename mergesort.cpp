@@ -51,7 +51,7 @@ void mergeArrays(int arr[], int pos1, int pos2, int pos3) {
   int n2 = pos3 - pos2;
 
   //Case of two number array
-  if (pos3-pos1==1) {
+  /*if (pos3-pos1==1) {
       if (arr[pos1] > arr[pos3])
       {
         int temp = arr[pos3];
@@ -60,7 +60,7 @@ void mergeArrays(int arr[], int pos1, int pos2, int pos3) {
         return;
       }
       return;
-  }
+  }*/
   // Create temp arrays
   int L[n1], R[n2];
 
@@ -86,7 +86,7 @@ void mergeArrays(int arr[], int pos1, int pos2, int pos3) {
   while (i < n1 && j < n2) {
       std::cout << "comparing " << L[i] << " to " << R[j];
       if (L[i] <= R[j]) {
-          std::cout << ", " << L[i] << "comes first\n";
+          std::cout << ", " << L[i] << "comes first\nk=" << k <<"\n";
           arr[k] = L[i];
           i++;
       } else {
