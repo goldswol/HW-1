@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <cstdlib>
+#include <time.h>
 
 void printArray(int*, int);
 void mergeSort(int* ,int, int);
@@ -8,21 +9,7 @@ void mergeSort(int* ,int, int);
 int main() {
   int arrsize;
   int* arr;
-  std::ifstream infile;
-  infile.open("data.txt");
-  //Handling file not opening as expected
-  if (infile.fail()) {
-      std::cerr << "failed to open file" << std::endl;
-      exit(0);
-  }
 
-  infile >> arrsize;
-  arr = new int[arrsize];
-
-  //SHOULD feed the txt file into an array of integers
-  for (int i = 0; i < arrsize; i++) {
-    infile >> arr[i];
-  }
 
   std::cout << "Given array is: \n";
   printArray(arr, arrsize);
@@ -33,8 +20,6 @@ int main() {
   printArray(arr, arrsize);
 
   //Here comes the part where the sort actually happens
-
-
   delete[] arr;
   return 0;
 }

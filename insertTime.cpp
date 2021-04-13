@@ -1,34 +1,22 @@
 #include <iostream>
 #include <fstream>
 #include <cstdlib>
+#include <time.h>
 
 void printArray(int*, int);
 void insertSort(int*, int);
+void runTimeN(int);
 
 int main()
 {
   int arrsize;
-  int* arr;
-  std::ifstream infile;
-  infile.open("data.txt");
-  if (infile.fail()) //Handling file not opening as expected
-  {
-      std::cerr << "failed to open file" << std::endl;
-      exit(0);
-  }
 
-  infile >> arrsize;
-  arr = new int[arrsize];
-
-  for (int i = 0; i < arrsize; i++) //SHOULD feed the txt file into an array of integers
-  {
-    infile >> arr[i];
-  }
-  printArray(arr, arrsize);
-  insertSort(arr, arrsize);
-  printArray(arr, arrsize);
-
-  delete[] arr;
+  runTimeN(10000);
+  runTimeN(20000);
+  runTimeN(30000);
+  runTimeN(40000);
+  runTimeN(50000);
+  
   return 0;
 }
 
@@ -55,4 +43,20 @@ void insertSort(int arr[], int arrsize)
         }
         arr[j + 1] = current;
     }
+}
+
+void runTimeN(int n)
+{
+  time(&start);
+  int arr*;
+  for (int i = 0; i < n; i++)
+  {
+    arr[i] = srand(time(NULL))%1000;
+  }
+
+  insertSort(arr, n);
+
+  delete[] arr;
+  time(&end);
+  std::cout << "Runtime for" << n << "items: " << fixed << time_taken << set_precision (5) << std::endl;
 }
