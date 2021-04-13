@@ -104,6 +104,6 @@ void mergeSort(int arr[], int l, int r) {
 // Print the array
 void printArray(int arr[], int size) {
   for (int i = 0; i < size; i++)
-    cout << arr[i] << " ";
-  cout << endl;
+    std::cout << arr[i] << " ";
+  std::cout << endl;
 }
