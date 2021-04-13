@@ -47,7 +47,7 @@ void printArray(int arr[], int arrsize) {
 //handles arrays from [pos1...pos2] and [pos2+1...pos3]
 void mergeArrays(int arr[], int pos1, int pos2, int pos3) {
   //define arrays by halving initial array
-  std::cout<< "\n";
+  std::cout<< "merging array from " << pos1<< " to " << pos3 "\n";
   printArray(arr, pos3-pos1);
   int n1 = pos2 - pos1 + 1;
   int n2 = pos3 - pos2;
@@ -85,8 +85,8 @@ void mergeSort(int arr[],int pos1,int pos3){
     if(pos1>=pos3){
         return;//returns recursively
     }
-    int pos2 =pos1+ (pos3-pos1)/2;
-    mergeSort(arr,pos1,pos2);
-    mergeSort(arr,pos2+1,pos3);
-    mergeArrays(arr,pos1,pos2,pos3);
+    int pos2 = pos1 + (pos3 - pos1) / 2;
+    mergeSort(arr, pos1, pos2);
+    mergeSort(arr, pos2 + 1, pos3);
+    mergeArrays(arr, pos1, pos2, pos3);
 }
