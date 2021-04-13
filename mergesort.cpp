@@ -27,7 +27,7 @@ int main() {
   std::cout << "Given array is: \n";
   printArray(arr, arrsize);
 
-  mergeSort(arr, 0, arrsize);
+  mergeSort(arr, 0, arrsize-1);
 
   std::cout << "\n\nSorted array is:\n";
   printArray(arr, arrsize);
@@ -54,6 +54,10 @@ void mergeArrays(int arr[], int pos1, int pos2, int pos3) {
 
   // Create temp arrays
   int L[n1], R[n2];
+  std::cout << "L[n1] where n1=" << n1 << ":\n";
+  printArray(L, n1);
+  std::cout << "R[n2] where n2=" << n2 << ":\n";
+  printArray(R, n2);
 
   // Copy data to temp arrays L[] and R[]
   for (int i = 0; i < n1; i++)
