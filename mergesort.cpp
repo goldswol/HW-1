@@ -40,7 +40,7 @@ int main() {
 }
 
 // Merge two subarrays L and M into arr
-void mergeSort(int arr[], int p, int q, int r) {
+void mergeArray(int arr[], int p, int q, int r) {
 
   // Create L ← A[p..q] and M ← A[q+1..r]
   int n1 = q - p + 1;
@@ -97,7 +97,7 @@ void mergeSort(int arr[], int l, int r) {
     mergeSort(arr, m + 1, r);
 
     // Merge the sorted subarrays
-    merge(arr, l, m, r);
+    mergeArray(arr, l, m, r);
   }
 }
 
