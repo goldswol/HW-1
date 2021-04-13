@@ -54,10 +54,6 @@ void mergeArrays(int arr[], int pos1, int pos2, int pos3) {
 
   // Create temp arrays
   int L[n1], R[n2];
-  std::cout << "L[n1] where n1=" << n1 << ":\n";
-  printArray(L, n1);
-  std::cout << "R[n2] where n2=" << n2 << ":\n";
-  printArray(R, n2);
 
   // Copy data to temp arrays L[] and R[]
   for (int i = 0; i < n1; i++)
@@ -65,7 +61,11 @@ void mergeArrays(int arr[], int pos1, int pos2, int pos3) {
 
   for (int j = 0; j < n2; j++)
       R[j] = arr[pos2 + 1 + j];
-
+      
+      std::cout << "L[n1] where n1=" << n1 << ":\n";
+      printArray(L, n1);
+      std::cout << "R[n2] where n2=" << n2 << ":\n";
+      printArray(R, n2);
   // Merge the temp arrays back into arr[l..r]
 
   // Initial index of first, second, and merged subarrays
