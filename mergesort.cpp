@@ -71,18 +71,18 @@ void mergeArrays(int arr[], int pos1, int pos2, int pos3) {
   int j = 0;
   int k = pos2;
   std::cout<< "\n\nmerging array from " << pos1<< " to " << pos3 << "\n";
-  printArray(arr, pos3);
   while (i < n1 && j < n2) {
       std::cout << "comparing " << L[i] << " to " << R[j];
       if (L[i] <= R[j]) {
+          std::cout << ", " << L[i] << "comes first\n";
           arr[k] = L[i];
           i++;
-          std::cout << ", " << L[i] << "comes first\n";
       }
       else {
+          std::cout<< ", " << R[j] << "comes first\n";
           arr[k] = R[j];
           j++;
-          std::cout<< ", " << R[j] << "comes first\n";
+
       }
       k++;
     }
