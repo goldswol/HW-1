@@ -49,7 +49,7 @@ void runTimeN(int n)
 {
   srand(time(NULL));
   std::clock();
-  int* arr;
+  int arr[500000];
   for (int i = 0; i < n; i++)
   {
     arr[i] = rand()%1000;
@@ -57,5 +57,4 @@ void runTimeN(int n)
 
   insertSort(arr, n);
 
-  delete[] arr;
 }
