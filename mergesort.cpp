@@ -80,7 +80,7 @@ void mergeArrays(int arr[], int pos1, int pos2, int pos3) {
       k++;
     }
 
-    while (i < n1) {
+    /*while (i < n1) {
       arr[k]=L[i];
       i++;
       k++;
@@ -89,7 +89,7 @@ void mergeArrays(int arr[], int pos1, int pos2, int pos3) {
       arr[k]=R[j];
       j++;
       k++;
-    }
+    }*/
 }
 
 void mergeSort(int arr[],int pos1,int pos3){
