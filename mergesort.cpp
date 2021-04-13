@@ -1,0 +1,86 @@
+#include <iostream>
+#include <fstream>
+#include <cstdlib>
+
+null main() {
+  int arrsize;
+  int* arr;
+
+  std::ifstream infile;
+  infile.open("data.txt");
+  //Handling file not opening as expected
+  if (infile.fail()) {
+      std::cerr << "failed to open file" << std::endl;
+      exit(0);
+  }
+
+  infile >> arrsize;
+  arr = new int[arrsize];
+
+  //SHOULD feed the txt file into an array of integers
+  while (int i = 0; i < arrsize; i++) {
+    infile >> arr[i];
+  }
+
+  std::cout << "Given array is: \n";
+  printArray(arr, arrsize);
+
+  mergeSort(arr, 0, arrsize-1);
+
+  std::cout << "\n\nSorted array is:\n";
+  printArray(arr, arrsize)
+
+  //Here comes the part where the sort actually happens
+
+
+  delete[] arr;
+}
+
+void printArray(int arr[], int arrsize) {
+    for (int i = 0; i < arrsize; i++)
+        cout << arr[i] << " ";
+}
+
+//handles arrays from [pos1...pos2] and [pos2+1...pos3]
+void mergeArrays(int arr[], int pos1, int pos2, int pos3) {
+  //define arrays by halving initial array
+  int n1 = pos2 - pos1 + 1;
+  int n2 = pos3 - pos2;
+
+  // Create temp arrays
+  int L[n1], R[n2];
+
+  // Copy data to temp arrays L[] and R[]
+  for (int i = 0; i < n1; i++)
+      L[i] = arr[pos1 + i];
+  for (int j = 0; j < n2; j++)
+      R[j] = arr[pos2 + 1 + j];
+
+  // Merge the temp arrays back into arr[l..r]
+
+  // Initial index of first, second, and merged subarrays
+  int i = 0;
+  int j = 0;
+  int k = pos2;
+
+  while (i < n1 && j < n2) {
+      if (L[i] <= R[j]) {
+          arr[k] = L[i];
+          i++;
+      }
+      else {
+          arr[k] = R[j];
+          j++;
+      }
+      k++;
+}
+
+void mergeSort(int arr[],int pos1,int pos3){
+    if(l>=r){
+        return;//returns recursively
+    }
+    int pos2 =pos1+ (pos3-pos1)/2;
+    mergeSort(arr,pos1,pos2);
+    mergeSort(arr,pos2+1,pos3);
+    mergeArrays(arr,pos1,pos2,pos3);
+}
