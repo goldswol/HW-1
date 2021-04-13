@@ -47,8 +47,6 @@ void printArray(int arr[], int arrsize) {
 //handles arrays from [pos1...pos2] and [pos2+1...pos3]
 void mergeArrays(int arr[], int pos1, int pos2, int pos3) {
   //define arrays by halving initial array
-  std::cout<< "\n\nmerging array from " << pos1<< " to " << pos3 << "\n";
-  printArray(arr, pos3);
   int n1 = pos2 - pos1 + 1;
   int n2 = pos3 - pos2;
 
@@ -72,7 +70,8 @@ void mergeArrays(int arr[], int pos1, int pos2, int pos3) {
   int i = 0;
   int j = 0;
   int k = pos2;
-
+  std::cout<< "\n\nmerging array from " << pos1<< " to " << pos3 << "\n";
+  printArray(arr, pos3);
   while (i < n1 && j < n2) {
       if (L[i] <= R[j]) {
           arr[k] = L[i];
@@ -84,6 +83,8 @@ void mergeArrays(int arr[], int pos1, int pos2, int pos3) {
       }
       k++;
     }
+  std::cout << "\n\narrays merged, output is:\n";
+  printArray(arr, pos3);
 }
 
 void mergeSort(int arr[],int pos1,int pos3){
