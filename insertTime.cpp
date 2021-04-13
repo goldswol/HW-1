@@ -9,7 +9,6 @@ void runTimeN(int);
 
 int main()
 {
-  using namespace std::chrono;
   int arrsize;
 
   runTimeN(10000);
