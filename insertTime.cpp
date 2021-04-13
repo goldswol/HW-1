@@ -1,9 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <cstdlib>
-#include <ctime>
 #include <time.h>
-#include <chrono>
 
 void printArray(int*, int);
 void insertSort(int*, int);
@@ -50,14 +48,16 @@ void insertSort(int arr[], int arrsize)
 
 void runTimeN(int n)
 {
+  clock_t start, stop;
+  double time_elapsed;
   int arr[500000];
   for (int i = 0; i < n; i++)
   {
     arr[i] = rand()%1000;
   }
-  auto start = high_resolution_clock::now();
+  start = clock();
   insertSort(arr, n);
-  auto stop = high_resolution_clock::now();
-  auto duration = duration_cast<microseconds>(stop - start);
-  std::cout << "Time taken for " << n << " variables: " << duration.count() <<std::endl;
+  stop = clock();
+  time_elapsed = ((float)stop-start)/CLOCKS_PER_SEC;
+  std::cout << "Time taken for " << n << " variables: " << time_elapsed <<std::endl;
 }
