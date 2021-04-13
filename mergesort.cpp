@@ -2,6 +2,9 @@
 #include <fstream>
 #include <cstdlib>
 
+void printArray(int*, int)
+void mergeSort(int* ,int, int){
+
 void main() {
   int arrsize;
   int* arr;
@@ -18,7 +21,7 @@ void main() {
   arr = new int[arrsize];
 
   //SHOULD feed the txt file into an array of integers
-  while (int i = 0; i < arrsize; i++) {
+  for (int i = 0; i < arrsize; i++) {
     infile >> arr[i];
   }
 

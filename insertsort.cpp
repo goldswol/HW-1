@@ -2,6 +2,9 @@
 #include <fstream>
 #include <cstdlib>
 
+void printArray(int*, int)
+void insertSort(int*, int)
+
 void main()
 {
   int arrsize;
@@ -19,7 +22,7 @@ void main()
   infile >> arrsize;
   arr = new int[arrsize];
 
-  while (int i = 0; i < arrsize; i++) //SHOULD feed the txt file into an array of integers
+  for (int i = 0; i < arrsize; i++) //SHOULD feed the txt file into an array of integers
   {
     infile >> arr[i];
   }
