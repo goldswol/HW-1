@@ -49,7 +49,7 @@ void runTimeN(int n)
 {
   time_t start, end;
   time(&start);
-  int arr*;
+  int* arr;
   for (int i = 0; i < n; i++)
   {
     arr[i] = srand(time(NULL))%1000;
