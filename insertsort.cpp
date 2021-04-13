@@ -2,7 +2,7 @@
 #include <fstream>
 #include <cstdlib>
 
-null main()
+void main()
 {
   int arrsize;
   int* arr;
