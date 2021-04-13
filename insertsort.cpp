@@ -9,6 +9,7 @@ int main()
 {
   int arrsize;
   int* arr;
+  std::cout << "File opened";
   std::ifstream infile;
   infile.open("data.txt");
   std::cout << "File opened";

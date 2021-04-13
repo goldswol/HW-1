@@ -8,7 +8,7 @@ void mergeSort(int* ,int, int);
 int main() {
   int arrsize;
   int* arr;
-
+  std::cout << "File opened";
   std::ifstream infile;
   infile.open("data.txt");
   std::cout << "File opened";
@@ -82,7 +82,7 @@ void mergeArrays(int arr[], int pos1, int pos2, int pos3) {
 }
 
 void mergeSort(int arr[],int pos1,int pos3){
-    if(l>=r){
+    if(pos1>=pos3){
         return;//returns recursively
     }
     int pos2 =pos1+ (pos3-pos1)/2;
