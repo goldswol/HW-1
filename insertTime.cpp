@@ -11,6 +11,7 @@ void runTimeN(int);
 
 int main()
 {
+  using namespace std::chrono;
   int arrsize;
 
   runTimeN(10000);
@@ -54,9 +55,9 @@ void runTimeN(int n)
   {
     arr[i] = rand()%1000;
   }
-  std::chrono::auto start = high_resolution_clock::now();
+  auto start = high_resolution_clock::now();
   insertSort(arr, n);
-  std::chrono::auto stop = high_resolution_clock::now();
-  std::chrono::auto duration = duration_cast<microseconds>(stop - start);
+  auto stop = high_resolution_clock::now();
+  auto duration = duration_cast<microseconds>(stop - start);
   std::cout << "Time taken for " << n << " variables: " << duration.count() <<std::endl;
 }
