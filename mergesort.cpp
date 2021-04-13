@@ -79,24 +79,13 @@ void mergeArrays(int arr[], int pos1, int pos2, int pos3) {
       }
       k++;
     }
-
-    /*while (i < n1) {
-      arr[k]=L[i];
-      i++;
-      k++;
-    }
-    while (j < n2) {
-      arr[k]=R[j];
-      j++;
-      k++;
-    }*/
 }
 
 void mergeSort(int arr[],int pos1,int pos3){
     if(pos1>=pos3){
         return;//returns recursively
     }
-    int pos2 = pos1 + pos3 / 2;
+    int pos2 = pos1 + (pos3 - pos1) / 2;
     mergeSort(arr, pos1, pos2);
     mergeSort(arr, pos2 + 1, pos3);
     mergeArrays(arr, pos1, pos2, pos3);
