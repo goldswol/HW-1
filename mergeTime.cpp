@@ -92,7 +92,7 @@ void runTimeN(int n)
 {
   clock_t start, stop;
   double time_elapsed;
-  int arr[10000000];
+  int arr[8000000];
   for (int i = 0; i < n; i++)
   {
     arr[i] = rand()%1000;
