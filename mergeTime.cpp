@@ -98,7 +98,7 @@ void runTimeN(int n)
     arr[i] = rand()%1000;
   }
   start = clock();
-  mergeSort(arr, n);
+  mergeSort(arr, 0, n);
   stop = clock();
   time_elapsed = ((float)stop-start)/CLOCKS_PER_SEC;
   std::cout << "Time taken for " << n << " variables: " << time_elapsed <<std::endl;
