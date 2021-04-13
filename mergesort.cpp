@@ -37,11 +37,12 @@ void main() {
 
 
   delete[] arr;
+  return 0;
 }
 
 void printArray(int arr[], int arrsize) {
     for (int i = 0; i < arrsize; i++)
-        cout << arr[i] << " ";
+        std::cout << arr[i] << " ";
 }
 
 //handles arrays from [pos1...pos2] and [pos2+1...pos3]

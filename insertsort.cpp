@@ -31,12 +31,13 @@ void main()
   printArray(arr, arrsize);
 
   delete[] arr;
+  return 0;
 }
 
 void printArray(int arr[], int arrsize)
 {
     for (int i = 0; i < arrsize; i++)
-        cout << arr[i] << " ";
+        std::cout << arr[i] << " ";
 }
 
 void insertSort(int arr[], int arrsize)
