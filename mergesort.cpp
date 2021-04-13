@@ -58,6 +58,7 @@ void mergeArrays(int arr[], int pos1, int pos2, int pos3) {
   // Copy data to temp arrays L[] and R[]
   for (int i = 0; i < n1; i++)
       L[i] = arr[pos1 + i];
+
   for (int j = 0; j < n2; j++)
       R[j] = arr[pos2 + 1 + j];
 
@@ -85,7 +86,7 @@ void mergeSort(int arr[],int pos1,int pos3){
     if(pos1>=pos3){
         return;//returns recursively
     }
-    int pos2 = pos1 + (pos3 - pos1) / 2;
+    int pos2 = pos1 + ((pos3 - pos1) / 2);
     mergeSort(arr, pos1, pos2);
     mergeSort(arr, pos2 + 1, pos3);
     mergeArrays(arr, pos1, pos2, pos3);
