@@ -90,7 +90,7 @@ void mergeArrays(int arr[], int pos1, int pos2, int pos3) {
           arr[k] = L[i];
           i++;
       } else {
-          std::cout<< ", " << R[j] << "comes first\n";
+          std::cout << ", " << R[j] << "comes first\nk=" << k <<"\n";
           arr[k] = R[j];
           j++;
       }
