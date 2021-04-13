@@ -57,5 +57,5 @@ void runTimeN(int n)
   }
   clock = std::clock() - clock;
   insertSort(arr, n);
-  std::cout << "Time taken for " << n << " variables: " << (float)clocks/CLOCKS_PER_SEC;
+  std::cout << "Time taken for " << n << " variables: " << (float)clock/CLOCKS_PER_SEC;
 }
