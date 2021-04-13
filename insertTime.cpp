@@ -16,6 +16,9 @@ int main()
   runTimeN(30000);
   runTimeN(40000);
   runTimeN(50000);
+  runTimeN(60000);
+  runTimeN(70000);
+  runTimeN(80000);
 
   return 0;
 }
