@@ -2,26 +2,20 @@
 #include <fstream>
 #include <cstdlib>
 #include <time.h>
-#include <bits/stdc++.h>
 
 void printArray(int*, int);
 void mergeSort(int* ,int, int);
+void runTimeN(int);
 
 int main() {
-  int arrsize;
-  int* arr;
-
-
-  std::cout << "Given array is: \n";
-  printArray(arr, arrsize);
-
-  mergeSort(arr, 0, arrsize-1);
-
-  std::cout << "\n\nSorted array is:\n";
-  printArray(arr, arrsize);
-
-  //Here comes the part where the sort actually happens
-  delete[] arr;
+  runTimeN(10000);
+  runTimeN(20000);
+  runTimeN(30000);
+  runTimeN(40000);
+  runTimeN(50000);
+  runTimeN(60000);
+  runTimeN(70000);
+  runTimeN(80000);
   return 0;
 }
 
@@ -92,4 +86,20 @@ void printArray(int arr[], int size) {
   for (int i = 0; i < size; i++)
     std::cout << arr[i] << " ";
   std::cout << "\n";
+}
+
+void runTimeN(int n)
+{
+  clock_t start, stop;
+  double time_elapsed;
+  int arr[500000];
+  for (int i = 0; i < n; i++)
+  {
+    arr[i] = rand()%1000;
+  }
+  start = clock();
+  mergeSort(arr, n);
+  stop = clock();
+  time_elapsed = ((float)stop-start)/CLOCKS_PER_SEC;
+  std::cout << "Time taken for " << n << " variables: " << time_elapsed <<std::endl;
 }
