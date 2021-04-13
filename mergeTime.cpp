@@ -12,7 +12,7 @@ int main() {
   runTimeN(200000);
   runTimeN(300000);
   runTimeN(400000);
-  runTimeN(5000000);
+  runTimeN(500000);
   runTimeN(600000);
   runTimeN(700000);
   runTimeN(800000);
