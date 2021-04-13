@@ -47,14 +47,15 @@ void insertSort(int arr[], int arrsize)
 
 void runTimeN(int n)
 {
+  clock_t clock;
   srand(time(NULL));
-  std::clock();
   int arr[500000];
+  clock = clock();
   for (int i = 0; i < n; i++)
   {
     arr[i] = rand()%1000;
   }
-
+  clock = clock() - clock;
   insertSort(arr, n);
-
+  std::cout << "Time taken for " << n << " variables: " << (float)clocks/CLOCKS_PER_SEC;
 }
