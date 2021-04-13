@@ -47,6 +47,7 @@ void printArray(int arr[], int arrsize) {
 //handles arrays from [pos1...pos2] and [pos2+1...pos3]
 void mergeArrays(int arr[], int pos1, int pos2, int pos3) {
   //define arrays by halving initial array
+  printArray(arr, pos3-pos1);
   int n1 = pos2 - pos1 + 1;
   int n2 = pos3 - pos2;
 
