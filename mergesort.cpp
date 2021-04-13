@@ -96,6 +96,18 @@ void mergeArrays(int arr[], int pos1, int pos2, int pos3) {
       }
       k++;
     }
+    while (i < n1)
+    {
+      arr[k] = L[i];
+      i++;
+      k++;
+    }
+    while (j < n2)
+    {
+      arr[k] = R[j];
+      j++;
+      k++;
+    }
   std::cout << "\n\narrays merged, output is:\n";
   printArray(arr, pos3);
 }
