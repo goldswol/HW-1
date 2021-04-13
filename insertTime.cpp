@@ -16,7 +16,7 @@ int main()
   runTimeN(30000);
   runTimeN(40000);
   runTimeN(50000);
-  
+
   return 0;
 }
 
@@ -47,6 +47,7 @@ void insertSort(int arr[], int arrsize)
 
 void runTimeN(int n)
 {
+  time_t start, end;
   time(&start);
   int arr*;
   for (int i = 0; i < n; i++)
