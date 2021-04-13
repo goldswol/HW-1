@@ -8,14 +8,14 @@ void mergeSort(int* ,int, int);
 void runTimeN(int);
 
 int main() {
-  runTimeN(10000);
-  runTimeN(20000);
-  runTimeN(30000);
-  runTimeN(40000);
-  runTimeN(50000);
-  runTimeN(60000);
-  runTimeN(70000);
-  runTimeN(80000);
+  runTimeN(100000);
+  runTimeN(200000);
+  runTimeN(300000);
+  runTimeN(400000);
+  runTimeN(500000);
+  runTimeN(600000);
+  runTimeN(700000);
+  runTimeN(800000);
   return 0;
 }
 
@@ -92,7 +92,7 @@ void runTimeN(int n)
 {
   clock_t start, stop;
   double time_elapsed;
-  int arr[500000];
+  int arr[1000000];
   for (int i = 0; i < n; i++)
   {
     arr[i] = rand()%1000;
