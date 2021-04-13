@@ -54,9 +54,9 @@ void runTimeN(int n)
   {
     arr[i] = rand()%1000;
   }
-  auto start = high_resolution_clock::now();
+  std::chrono::auto start = high_resolution_clock::now();
   insertSort(arr, n);
-  auto stop = high_resolution_clock::now();
-  auto duration = duration_cast<microseconds>(stop - start);
+  std::chrono::auto stop = high_resolution_clock::now();
+  std::chrono::auto duration = duration_cast<microseconds>(stop - start);
   std::cout << "Time taken for " << n << " variables: " << duration.count() <<std::endl;
 }
