@@ -48,7 +48,7 @@ void printArray(int arr[], int arrsize) {
 void mergeArrays(int arr[], int pos1, int pos2, int pos3) {
   //define arrays by halving initial array
   std::cout<< "\n\nmerging array from " << pos1<< " to " << pos3 << "\n";
-  printArray(arr, pos3-pos1);
+  printArray(arr, pos3);
   int n1 = pos2 - pos1 + 1;
   int n2 = pos3 - pos2;
 
@@ -61,7 +61,7 @@ void mergeArrays(int arr[], int pos1, int pos2, int pos3) {
 
   for (int j = 0; j < n2; j++)
       R[j] = arr[pos2 + 1 + j];
-      
+
       std::cout << "L[n1] where n1=" << n1 << ":\n";
       printArray(L, n1);
       std::cout << "R[n2] where n2=" << n2 << ":\n";
