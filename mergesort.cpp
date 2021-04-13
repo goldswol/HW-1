@@ -27,7 +27,7 @@ int main() {
   std::cout << "Given array is: \n";
   printArray(arr, arrsize);
 
-  mergeSort(arr, 0, arrsize-1);
+  mergeSort(arr, 0, arrsize);
 
   std::cout << "\n\nSorted array is:\n";
   printArray(arr, arrsize);
@@ -70,7 +70,7 @@ void mergeArrays(int arr[], int pos1, int pos2, int pos3) {
   int k = pos2;
 
   while (i < n1 && j < n2) {
-      if (L[i] >= R[j]) {
+      if (L[i] <= R[j]) {
           arr[k] = L[i];
           i++;
       }
