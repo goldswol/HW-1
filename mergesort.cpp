@@ -61,7 +61,6 @@ void mergeArrays(int arr[], int pos1, int pos2, int pos3) {
       }
       return;
   }
-
   // Create temp arrays
   int L[n1], R[n2];
 
@@ -90,12 +89,10 @@ void mergeArrays(int arr[], int pos1, int pos2, int pos3) {
           std::cout << ", " << L[i] << "comes first\n";
           arr[k] = L[i];
           i++;
-      }
-      else {
+      } else {
           std::cout<< ", " << R[j] << "comes first\n";
           arr[k] = R[j];
           j++;
-
       }
       k++;
     }
