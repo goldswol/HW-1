@@ -39,85 +39,71 @@ int main() {
   return 0;
 }
 
-void printArray(int arr[], int arrsize) {
-    for (int i = 0; i < arrsize; i++)
-        std::cout << arr[i] << " ";
-}
+// Merge two subarrays L and M into arr
+void mergeSort(int arr[], int p, int q, int r) {
 
-//handles arrays from [pos1...pos2] and [pos2+1...pos3]
-void mergeArrays(int arr[], int pos1, int pos2, int pos3) {
-  //define arrays by halving initial array
-  int n1 = pos2 - pos1 + 1;
-  int n2 = pos3 - pos2;
+  // Create L ← A[p..q] and M ← A[q+1..r]
+  int n1 = q - p + 1;
+  int n2 = r - q;
 
-  //Case of two number array
-  /*if (pos3-pos1==1) {
-      if (arr[pos1] > arr[pos3])
-      {
-        int temp = arr[pos3];
-        arr[pos3] = arr[pos1];
-        arr[pos1] = temp;
-        return;
-      }
-      return;
-  }*/
-  // Create temp arrays
-  int L[n1], R[n2];
+  int L[n1], M[n2];
 
-
-  // Copy data to temp arrays L[] and R[]
   for (int i = 0; i < n1; i++)
-    L[i] = arr[pos1 + i];
-
+    L[i] = arr[p + i];
   for (int j = 0; j < n2; j++)
-    R[j] = arr[pos2 + 1 + j];
+    M[j] = arr[q + 1 + j];
 
-  std::cout << "L[n1] where n1=" << n1 << ":\n";
-  printArray(L, n1);
-  std::cout << "R[n2] where n2=" << n2 << ":\n";
-  printArray(R, n2);
-  // Merge the temp arrays back into arr[l..r]
+  // Maintain current index of sub-arrays and main array
+  int i, j, k;
+  i = 0;
+  j = 0;
+  k = p;
 
-  // Initial index of first, second, and merged subarrays
-  int i = 0;
-  int j = 0;
-  int k = pos2;
-  std::cout<< "\n\nmerging array from " << pos1<< " to " << pos3 << "\n";
+  // Until we reach either end of either L or M, pick larger among
+  // elements L and M and place them in the correct position at A[p..r]
   while (i < n1 && j < n2) {
-      std::cout << "comparing " << L[i] << " to " << R[j];
-      if (L[i] <= R[j]) {
-          std::cout << ", " << L[i] << "comes first\nk=" << k <<"\n";
-          arr[k] = L[i];
-          i++;
-      } else {
-          std::cout << ", " << R[j] << "comes first\nk=" << k <<"\n";
-          arr[k] = R[j];
-          j++;
-      }
-      k++;
-    }
-    while (i < n1)
-    {
+    if (L[i] <= M[j]) {
       arr[k] = L[i];
       i++;
-      k++;
-    }
-    while (j < n2)
-    {
-      arr[k] = R[j];
+    } else {
+      arr[k] = M[j];
       j++;
-      k++;
     }
-  std::cout << "\n\narrays merged, output is:\n";
-  printArray(arr, pos3);
+    k++;
+  }
+
+  // When we run out of elements in either L or M,
+  // pick up the remaining elements and put in A[p..r]
+  while (i < n1) {
+    arr[k] = L[i];
+    i++;
+    k++;
+  }
+
+  while (j < n2) {
+    arr[k] = M[j];
+    j++;
+    k++;
+  }
 }
 
-void mergeSort(int arr[],int pos1,int pos3){
-    if(pos1>=pos3){
-        return;//returns recursively
-    }
-    int pos2 = pos1 + ((pos3 - pos1) / 2);
-    mergeSort(arr, pos1, pos2);
-    mergeSort(arr, pos2 + 1, pos3);
-    mergeArrays(arr, pos1, pos2, pos3);
+// Divide the array into two subarrays, sort them and merge them
+void mergeSort(int arr[], int l, int r) {
+  if (l < r) {
+    // m is the point where the array is divided into two subarrays
+    int m = l + (r - l) / 2;
+
+    mergeSort(arr, l, m);
+    mergeSort(arr, m + 1, r);
+
+    // Merge the sorted subarrays
+    merge(arr, l, m, r);
+  }
+}
+
+// Print the array
+void printArray(int arr[], int size) {
+  for (int i = 0; i < size; i++)
+    cout << arr[i] << " ";
+  cout << endl;
 }
