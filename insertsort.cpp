@@ -9,10 +9,8 @@ int main()
 {
   int arrsize;
   int* arr;
-  std::cout << "File opened";
   std::ifstream infile;
   infile.open("data.txt");
-  std::cout << "File opened";
   if (infile.fail()) //Handling file not opening as expected
   {
       std::cerr << "failed to open file" << std::endl;
@@ -26,7 +24,7 @@ int main()
   {
     infile >> arr[i];
   }
-
+  printArray(arr, arrsize);
   insertSort(arr, arrsize);
   printArray(arr, arrsize);
 

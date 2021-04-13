@@ -8,10 +8,8 @@ void mergeSort(int* ,int, int);
 int main() {
   int arrsize;
   int* arr;
-  std::cout << "File opened";
   std::ifstream infile;
   infile.open("data.txt");
-  std::cout << "File opened";
   //Handling file not opening as expected
   if (infile.fail()) {
       std::cerr << "failed to open file" << std::endl;
