@@ -50,20 +50,33 @@ void mergeArrays(int arr[], int pos1, int pos2, int pos3) {
   int n1 = pos2 - pos1 + 1;
   int n2 = pos3 - pos2;
 
+  //Case of two number array
+  if (pos3-pos1==1) {
+      if (arr[pos1] > arr[pos3])
+      {
+        int temp = arr[pos3];
+        arr[pos3] = arr[pos1];
+        arr[pos1] = temp;
+        return;
+      }
+      return;
+  }
+
   // Create temp arrays
   int L[n1], R[n2];
 
+
   // Copy data to temp arrays L[] and R[]
   for (int i = 0; i < n1; i++)
-      L[i] = arr[pos1 + i];
+    L[i] = arr[pos1 + i];
 
   for (int j = 0; j < n2; j++)
-      R[j] = arr[pos2 + 1 + j];
+    R[j] = arr[pos2 + 1 + j];
 
-      std::cout << "L[n1] where n1=" << n1 << ":\n";
-      printArray(L, n1);
-      std::cout << "R[n2] where n2=" << n2 << ":\n";
-      printArray(R, n2);
+  std::cout << "L[n1] where n1=" << n1 << ":\n";
+  printArray(L, n1);
+  std::cout << "R[n2] where n2=" << n2 << ":\n";
+  printArray(R, n2);
   // Merge the temp arrays back into arr[l..r]
 
   // Initial index of first, second, and merged subarrays
