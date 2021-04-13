@@ -5,7 +5,7 @@
 void printArray(int*, int);
 void mergeSort(int* ,int, int);
 
-void main() {
+int main() {
   int arrsize;
   int* arr;
 

@@ -5,11 +5,10 @@
 void printArray(int*, int);
 void insertSort(int*, int);
 
-void main()
+int main()
 {
   int arrsize;
   int* arr;
-  return 0;
   std::ifstream infile;
   infile.open("data.txt");
 
