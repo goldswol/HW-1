@@ -2,8 +2,8 @@
 #include <fstream>
 #include <cstdlib>
 
-void printArray(int*, int)
-void mergeSort(int* ,int, int){
+void printArray(int*, int);
+void mergeSort(int* ,int, int);
 
 void main() {
   int arrsize;
